@@ -1,7 +1,6 @@
 package geom
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -13,7 +12,7 @@ func TestVertexAngle(t *testing.T) {
 	r1 := VertexAngle(A, B, C)
 	r2 := VertexAngle(A, B, D)
 	if r1 != -r2 {
-
+		t.Error("r1 != -r2", r1, r2)
 	}
 
 	p1 := Coord{1, 2}
@@ -23,7 +22,7 @@ func TestVertexAngle(t *testing.T) {
 
 	rp := VertexAngle(p1, p2, p3)
 	rn := VertexAngle(p4, p2, p3)
-	fmt.Println(rp, rn)
+	t.Log(rp, rn)
 }
 
 func TestVectorAngle(t *testing.T) {
@@ -35,5 +34,5 @@ func TestVectorAngle(t *testing.T) {
 	a12 := VectorAngle(v1, v2)
 	a34 := VectorAngle(v3, v4)
 
-	fmt.Println(a12, a34)
+	t.Log(a12, a34)
 }

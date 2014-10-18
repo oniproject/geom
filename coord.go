@@ -26,22 +26,15 @@ func (p *Coord) Equals(oi interface{}) (equals bool) {
 	return
 }
 
-func (p *Coord) Translate(offset Coord) {
-	*p = p.Plus(offset)
-}
+func (p *Coord) Translate(offset Coord) { *p = p.Plus(offset) }
 
 func (p *Coord) Rotate(rad float64) {
 	p.X = p.X*math.Cos(rad) - p.Y*math.Sin(rad)
 	p.Y = p.X*math.Sin(rad) + p.Y*math.Cos(rad)
 }
 
-func (p *Coord) RotateLeft() {
-	p.X, p.Y = -p.Y, p.X
-}
-
-func (p *Coord) RotateRight() {
-	p.X, p.Y = p.Y, -p.X
-}
+func (p *Coord) RotateLeft()  { p.X, p.Y = -p.Y, p.X }
+func (p *Coord) RotateRight() { p.X, p.Y = p.Y, -p.X }
 
 func (p Coord) Unit() (u Coord) {
 	m := p.Magnitude()
@@ -55,27 +48,13 @@ func (p *Coord) Scale(xfactor, yfactor float64) {
 	p.Y *= yfactor
 }
 
-func (p Coord) EqualsCoord(q Coord) bool {
-	return p.X == q.X && p.Y == q.Y
-}
+func (p Coord) EqualsCoord(q Coord) bool { return p.X == q.X && p.Y == q.Y }
 
-func (p Coord) DistanceFrom(q Coord) (d float64) {
-	return p.Minus(q).Magnitude()
-}
+func (p Coord) DistanceFrom(q Coord) (d float64)         { return p.Minus(q).Magnitude() }
+func (p Coord) DistanceFromSquared(q Coord) (ds float64) { return p.Minus(q).MagnitudeSquared() }
 
-func (p Coord) DistanceFromSquared(q Coord) (ds float64) {
-	return p.Minus(q).MagnitudeSquared()
-}
-
-func (p Coord) Magnitude() (m float64) {
-	m = math.Sqrt(p.MagnitudeSquared())
-	return
-}
-
-func (p Coord) MagnitudeSquared() (ms float64) {
-	ms = p.X*p.X + p.Y*p.Y
-	return
-}
+func (p Coord) Magnitude() (m float64)         { return math.Sqrt(p.MagnitudeSquared()) }
+func (p Coord) MagnitudeSquared() (ms float64) { return p.X*p.X + p.Y*p.Y }
 
 func (p Coord) Minus(q Coord) (r Coord) {
 	r.X = p.X - q.X
@@ -95,31 +74,13 @@ func (p Coord) Times(s float64) (r Coord) {
 	return
 }
 
-func (p Coord) QuadPP(q Coord) bool {
-	return q.X >= p.X && q.Y >= p.Y
-}
+func (p Coord) QuadPP(q Coord) bool { return q.X >= p.X && q.Y >= p.Y }
+func (p Coord) QuadPM(q Coord) bool { return q.X >= p.X && q.Y <= p.Y }
+func (p Coord) QuadMP(q Coord) bool { return q.X <= p.X && q.Y >= p.Y }
+func (p Coord) QuadMM(q Coord) bool { return q.X <= p.X && q.Y <= p.Y }
 
-func (p Coord) QuadPM(q Coord) bool {
-	return q.X >= p.X && q.Y <= p.Y
-}
-
-func (p Coord) QuadMP(q Coord) bool {
-	return q.X <= p.X && q.Y >= p.Y
-}
-
-func (p Coord) QuadMM(q Coord) bool {
-	return q.X <= p.X && q.Y <= p.Y
-}
-
-func DotProduct(p, q Coord) (r float64) {
-	r = p.X*q.X + p.Y*q.Y
-	return
-}
-
-func CrossProduct(p, q Coord) (z float64) {
-	z = p.X*q.Y - p.Y*q.X
-	return
-}
+func DotProduct(p, q Coord) (r float64)   { return p.X*q.X + p.Y*q.Y }
+func CrossProduct(p, q Coord) (z float64) { return p.X*q.Y - p.Y*q.X }
 
 func VectorAngle(X, Y Coord) (r float64) {
 	XdotY := DotProduct(X, Y)
@@ -136,9 +97,9 @@ func VertexAngle(A, B, C Coord) (r float64) {
 	X := A.Minus(B)
 	Y := C.Minus(B)
 	r = VectorAngle(X, Y)
-	if r < 0 {
+	/*if r < 0 {
 		r *= -1
-	}
+	}*/
 	return
 }
 

@@ -1,20 +1,8 @@
 package geom
 
 import (
-	"fmt"
 	"testing"
 )
-
-func debugln(args ...interface{}) {
-	if false {
-		fmt.Println(args...)
-	}
-}
-func debugf(format string, args ...interface{}) {
-	if false {
-		fmt.Printf(format, args...)
-	}
-}
 
 func TestInsert(t *testing.T) {
 	p := &Polygon{}
@@ -44,12 +32,11 @@ func TestPolyTriangularize(t *testing.T) {
 	poly.AddVertex(Coord{1, 0})
 	tris, ok := poly.Triangles()
 	if ok {
-		debugln()
 		for _, tri := range tris {
-			debugf("triangle: %v\n", tri)
+			t.Logf("triangle: %v\n", tri)
 		}
 	} else {
-		debugf("No triangles for %v\n", poly)
+		t.Logf("No triangles for %v\n", poly)
 	}
 
 	poly = new(Polygon)
@@ -61,12 +48,11 @@ func TestPolyTriangularize(t *testing.T) {
 	poly.AddVertex(Coord{0, 3})
 	tris, ok = poly.Triangles()
 	if ok {
-		debugln()
 		for _, tri := range tris {
-			debugf("triangle: %v\n", tri)
+			t.Logf("triangle: %v\n", tri)
 		}
 	} else {
-		debugf("No triangles for %v\n", poly)
+		t.Logf("No triangles for %v\n", poly)
 	}
 
 	poly = new(Polygon)
@@ -76,12 +62,11 @@ func TestPolyTriangularize(t *testing.T) {
 	poly.AddVertex(Coord{1, 3})
 	tris, ok = poly.Triangles()
 	if ok {
-		debugln()
 		for _, tri := range tris {
-			debugf("triangle: %v\n", tri)
+			t.Logf("triangle: %v\n", tri)
 		}
 	} else {
-		debugf("No triangles for %v\n", poly)
+		t.Logf("No triangles for %v\n", poly)
 	}
 }
 
@@ -106,12 +91,11 @@ func TestPiece(t *testing.T) {
 	}
 	tris, ok := poly.Triangles()
 	if ok {
-		debugln()
 		for _, tri := range tris {
-			debugf("triangle: %v\n", tri)
+			t.Logf("triangle: %v\n", tri)
 		}
 	} else {
-		debugf("No triangles for %v\n", poly)
+		t.Logf("No triangles for %v\n", poly)
 	}
 
 	vertices = []Coord{
@@ -135,11 +119,10 @@ func TestPiece(t *testing.T) {
 	}
 	tris, ok = poly.Triangles()
 	if ok {
-		debugln()
 		for _, tri := range tris {
-			debugf("triangle: %v\n", tri)
+			t.Logf("triangle: %v\n", tri)
 		}
 	} else {
-		debugf("No triangles for %v\n", poly)
+		t.Logf("No triangles for %v\n", poly)
 	}
 }

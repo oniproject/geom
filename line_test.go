@@ -1,7 +1,6 @@
 package geom
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -28,7 +27,7 @@ func TestIntersect(t *testing.T) {
 	for i, test := range itests {
 		p := LineIntersection(test.l1, test.l2)
 		if p != test.p {
-			t.Error(fmt.Sprintf("itests[%d]: should be %v, was %v", i, test.p, p))
+			t.Errorf("itests[%d]: should be %v, was %v", i, test.p, p)
 		}
 	}
 }
