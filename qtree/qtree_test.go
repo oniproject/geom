@@ -1,7 +1,6 @@
 package qtree
 
 import (
-	"fmt"
 	"github.com/oniproject/geom"
 	"testing"
 )
@@ -16,5 +15,5 @@ func TestInsertCollect(t *testing.T) {
 	collection := make(map[Item]bool)
 	qt.CollectIntersect(r, collection)
 
-	fmt.Printf("%v\n", collection)
+	t.Logf("%v", collection)
 }
