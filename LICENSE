@@ -1,4 +1,5 @@
 Copyright 2012 John Asmuth. All rights reserved.
+Copyright 2014 Lain-dono <lain.dono@gmail.com>. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -10,10 +11,10 @@ are permitted provided that the following conditions are met:
    this list of conditions and the following disclaimer in the documentation
    and/or other materials provided with the distribution.
 
-THIS SOFTWARE IS PROVIDED BY JOHN ASMUTH ``AS IS'' AND ANY EXPRESS OR IMPLIED
+THIS SOFTWARE IS PROVIDED BY JOHN ASMUTH AND LAIN-DONO ``AS IS'' AND ANY EXPRESS OR IMPLIED
 WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
-SHALL JOHN ASMUTH OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+SHALL JOHN ASMUT AND LAIN-DONO OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
 LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
 PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
@@ -23,4 +24,4 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of John Asmuth.
+either expressed or implied, of John Asmuth and Lain-dono.
